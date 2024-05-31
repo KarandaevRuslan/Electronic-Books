@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" name="ServiceBook" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:62698/ServiceBook.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:62698/ServiceBook.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:62698/ServiceBook.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:62698/ServiceBook.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfServiceBook" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IServiceBook_SignIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SignIn" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_SignIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SignInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_SearchUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsers" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_SearchUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_SearchBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBooks" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_SearchBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditUserData_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditUserData" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditUserData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditUserDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_DeleteAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccount" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_DeleteAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_DeleteBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBook" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_DeleteBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetName" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBook" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetBooksId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetBooksId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDescription" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPassword" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Put_InputMessage">
+    <wsdl:part name="parameters" element="tns:Put" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Put_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Put1_InputMessage">
+    <wsdl:part name="parameters" element="tns:Put1" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Put1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Put1Response" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookName_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookName" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookDescription" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookCanEdit_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookCanEdit" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookCanEdit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookCanEditResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookAccess_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookAccess" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_EditBookAccess_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditBookAccessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetUserId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserId" />
+  </wsdl:message>
+  <wsdl:message name="IServiceBook_GetUserId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IServiceBook">
+    <wsdl:operation name="SignIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/SignIn" message="tns:IServiceBook_SignIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/SignInResponse" message="tns:IServiceBook_SignIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/SearchUsers" message="tns:IServiceBook_SearchUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/SearchUsersResponse" message="tns:IServiceBook_SearchUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/SearchBooks" message="tns:IServiceBook_SearchBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/SearchBooksResponse" message="tns:IServiceBook_SearchBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditUserData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/EditUserData" message="tns:IServiceBook_EditUserData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/EditUserDataResponse" message="tns:IServiceBook_EditUserData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/DeleteAccount" message="tns:IServiceBook_DeleteAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/DeleteAccountResponse" message="tns:IServiceBook_DeleteAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/DeleteBook" message="tns:IServiceBook_DeleteBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/DeleteBookResponse" message="tns:IServiceBook_DeleteBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetName" message="tns:IServiceBook_GetName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetNameResponse" message="tns:IServiceBook_GetName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetBook" message="tns:IServiceBook_GetBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetBookResponse" message="tns:IServiceBook_GetBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetBooksId" message="tns:IServiceBook_GetBooksId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetBooksIdResponse" message="tns:IServiceBook_GetBooksId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetDescription" message="tns:IServiceBook_GetDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetDescriptionResponse" message="tns:IServiceBook_GetDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetPassword" message="tns:IServiceBook_GetPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetPasswordResponse" message="tns:IServiceBook_GetPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/RegisterUser" message="tns:IServiceBook_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/RegisterUserResponse" message="tns:IServiceBook_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/Put" message="tns:IServiceBook_Put_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/PutResponse" message="tns:IServiceBook_Put_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Put1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/Put1" message="tns:IServiceBook_Put1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/Put1Response" message="tns:IServiceBook_Put1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBookName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/EditBookName" message="tns:IServiceBook_EditBookName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/EditBookNameResponse" message="tns:IServiceBook_EditBookName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBookDescription">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/EditBookDescription" message="tns:IServiceBook_EditBookDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/EditBookDescriptionResponse" message="tns:IServiceBook_EditBookDescription_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBookCanEdit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/EditBookCanEdit" message="tns:IServiceBook_EditBookCanEdit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/EditBookCanEditResponse" message="tns:IServiceBook_EditBookCanEdit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditBookAccess">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/EditBookAccess" message="tns:IServiceBook_EditBookAccess_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/EditBookAccessResponse" message="tns:IServiceBook_EditBookAccess_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/Get" message="tns:IServiceBook_Get_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetResponse" message="tns:IServiceBook_Get_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceBook/GetUserId" message="tns:IServiceBook_GetUserId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceBook/GetUserIdResponse" message="tns:IServiceBook_GetUserId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IServiceBook" type="tns:IServiceBook">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SignIn">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/SignIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUsers">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/SearchUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchBooks">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/SearchBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditUserData">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/EditUserData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAccount">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/DeleteAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBook">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/DeleteBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetName">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBook">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooksId">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetBooksId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDescription">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPassword">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Put">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/Put" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Put1">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/Put1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBookName">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/EditBookName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBookDescription">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/EditBookDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBookCanEdit">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/EditBookCanEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditBookAccess">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/EditBookAccess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/Get" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserId">
+      <soap:operation soapAction="http://tempuri.org/IServiceBook/GetUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceBook">
+    <wsdl:port name="BasicHttpBinding_IServiceBook" binding="tns:BasicHttpBinding_IServiceBook">
+      <soap:address location="http://localhost:62698/ServiceBook.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,57 @@
+﻿<Window x:Class="ElectronicBooks.Views.Windows.ConversionProgress"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicBooks.Views.Windows"
+        mc:Ignorable="d"
+        Title="Конвертация в webm"
+        Icon="/ElectronicBooks;component/Resources/Images/bookIcon.png"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="500" Height="200">
+    <Grid>
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF686868" Offset="0"/>
+                <GradientStop Color="#FFDFDFDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Panel.Background>
+        <ProgressBar x:Name="pb" Value="0" Margin="30,70,30,0" Maximum="100" Height="30" IsIndeterminate="false"
+                 HorizontalAlignment="Stretch" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5"
+                 BorderBrush="#FFFDFDFD">
+            <Control.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <Brush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="90" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Brush.RelativeTransform>
+                    <GradientStop Color="#FFD9D9D9"/>
+                    <GradientStop Color="DarkGray" Offset="1"/>
+                </LinearGradientBrush>
+            </Control.Background>
+            <Control.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <Brush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="-90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Brush.RelativeTransform>
+                    <GradientStop Color="#FF202020" Offset="0"/>
+                    <GradientStop Color="#FF737373" Offset="1"/>
+                </LinearGradientBrush>
+            </Control.Foreground>
+        </ProgressBar>
+        <TextBlock x:Name="progress" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,70,0,0"
+               FontFamily="Times New Roman" FontSize="20" Text="0 %" FontWeight="Bold" Foreground="White"
+               TextAlignment="Center"/>
+        <TextBlock x:Name="message" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="30,0,30,70"
+               FontFamily="Times New Roman" FontSize="20" FontWeight="Bold" Foreground="White"
+               TextAlignment="Center" TextWrapping="Wrap"/>
+    </Grid>
+</Window>

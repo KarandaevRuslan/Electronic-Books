@@ -1,0 +1,67 @@
+﻿<Window x:Class="ElectronicBooks.Views.Windows.ClearUnusedDocuments"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicBooks.Views.Windows"
+        mc:Ignorable="d"
+        Title="Удаление неиспользуемых файлов"
+        Icon="/ElectronicBooks;component/Resources/Images/bookIcon.png"
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Width="575">
+    <FrameworkElement.Resources>
+        <Style x:Key="myLBStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border Name="_Border" Padding="2" SnapsToDevicePixels="true">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="true">
+                                <Setter TargetName="_Border" Property="Border.Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="false">
+                                <Setter TargetName="_Border" Property="Border.Background" Value="#FFD4D4D4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF686868" Offset="0"/>
+                <GradientStop Color="#FFDFDFDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Panel.Background>
+        <TextBlock HorizontalAlignment="Stretch" Margin="51,10,10,0" TextWrapping="Wrap" FontSize="30"
+               FontFamily="Times New Roman" Height="36" VerticalAlignment="Top" Text="Неиспользуемые файлы:"
+               Background="#FFD4D4D4" TextAlignment="Center">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF999999" Offset="0"/>
+                    <GradientStop Color="#FF595959" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <ListBox x:Name="list" Margin="10,51,10,10" HorizontalAlignment="Stretch"
+             HorizontalContentAlignment="Center" ItemContainerStyle="{StaticResource myLBStyle}"
+             ToolTip="Нажмите по кнопке из списка, чтобы удалить неиспользуемый файл"
+             VerticalAlignment="Stretch" MinHeight="500">
+            <Control.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Silver" Offset="0"/>
+                    <GradientStop Color="#FF656565" Offset="1"/>
+                </LinearGradientBrush>
+            </Control.Background>
+        </ListBox>
+        <Grid Margin="10,10,0,0" Width="36.04" Background="#FFD4D4D4" VerticalAlignment="Top"
+          HorizontalAlignment="Left" Height="36.04" MouseLeftButtonUp="ClearAll">
+            <Image HorizontalAlignment="Center" Margin="0,0,0,0" Width="30"
+             Source="/ElectronicBooks;component/Resources/Images/trashCan.png" Height="30"
+             VerticalAlignment="Center" ToolTip="Удалить все неиспользуемые файлы"/>
+        </Grid>
+    </Grid>
+</Window>

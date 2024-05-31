@@ -1,0 +1,34 @@
+﻿<Window x:Class="ElectronicBooks.Views.Windows.BookNameEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicBooks.Views.Windows"
+        mc:Ignorable="d"
+        Icon="/ElectronicBooks;component/Resources/Images/bookIcon.png"
+        ResizeMode="NoResize" Height="150" Width="500" WindowStartupLocation="CenterScreen"
+        Title="Введите новое название книги">
+    <Grid>
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF686868" Offset="0"/>
+                <GradientStop Color="#FFDFDFDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Panel.Background>
+        <TextBox x:Name="WhatIsBookName" TextWrapping="Wrap" FontFamily="Times New Roman" Margin="10,10,80,10"
+             Background="#FFE8E8E8" FontSize="20" Foreground="Black"
+             ToolTip="Введите новое название книги и нажмите enter" KeyUp="Enter"/>
+        <Button Margin="0,10,10,10" Background="#FFF4F4F4" VerticalAlignment="Stretch" HorizontalAlignment="Right"
+            Width="65" BorderBrush="{x:Null}" Click="Enter">
+            <TextBlock FontFamily="Times New Roman" FontSize="24" TextWrapping="Wrap" TextAlignment="Center"
+                 FontWeight="Normal" Text="OK">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF343434" Offset="0"/>
+                        <GradientStop Color="#FF171717" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Button>
+    </Grid>
+</Window>

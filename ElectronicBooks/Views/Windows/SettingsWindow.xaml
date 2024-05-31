@@ -1,0 +1,52 @@
+﻿<Window x:Class="ElectronicBooks.Views.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicBooks.Views.Windows"
+        mc:Ignorable="d"
+        Title="Настройки"
+        Icon="/ElectronicBooks;component/Resources/Images/bookIcon.png"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Width="670" Height="405">
+    <Grid>
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFA4A4A4" Offset="0"/>
+                <GradientStop Color="#FF989898" Offset="1"/>
+            </LinearGradientBrush>
+        </Panel.Background>
+        <TextBlock MouseLeftButtonDown="OpenSelectCatalogDialog" x:Name="bookCatalogPath" Margin="250,90,10,0"
+               TextWrapping="Wrap" VerticalAlignment="Top" Width="410" FontFamily="Times New Roman"
+               Background="#FFD2D2D2"
+               ToolTip="Клик ЛКМ, чтобы открыть проводник для выбора папки, в которой будет находиться каталог книг"
+               MaxHeight="50" MinHeight="50" FontSize="22" Padding="5,0,5,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Расположение каталога книг"
+               VerticalAlignment="Top" FontFamily="Times New Roman" Width="235" Height="50" TextAlignment="Center"
+               Background="#FFC3C3C3" FontSize="22"/>
+        <Grid Background="#FFC3C3C3" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Image MouseLeftButtonUp="Back" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"
+             Source="/ElectronicBooks;component/Resources/Images/backIcon.png" Width="50"
+             Height="50" ToolTip="Назад" MinWidth="50" MinHeight="50"/>
+            <Image MouseLeftButtonUp="SaveSettings" x:Name="saveImageButton" Source="/ElectronicBooks;component/Resources/Images/inactiveSaveIcon.png"
+             Width="50" Height="50" Margin="80,10,0,9" Visibility="Visible"
+             ToolTip="Сохранить и применить настройки" RenderTransformOrigin="-1.5,0.734" MinWidth="50"
+             MinHeight="50" HorizontalAlignment="Left"/>
+            <Image MouseLeftButtonUp="DefaultSettings" x:Name="defaultSettingsButton"
+             Source="/ElectronicBooks;component/Resources/Images/defaultSettingsIcon.png" Width="50" Height="50" Margin="150,10,0,9"
+             Visibility="Visible" ToolTip="Настройки по умолчанию" MinWidth="50" MinHeight="50"
+             HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        </Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+               FontFamily="Times New Roman" Width="235" Height="50" TextAlignment="Center" Background="#FFC3C3C3"
+               FontSize="22" Text="IP хоста в локальной сети"/>
+        <TextBox KeyUp="OnHostIPChanged" x:Name="hostIp" Margin="250,146,10,0" TextWrapping="Wrap"
+             VerticalAlignment="Top" Width="410" FontFamily="Times New Roman" Background="#FFD2D2D2"
+             MaxHeight="50" MinHeight="50" FontSize="22" Padding="5,0,5,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+               FontFamily="Times New Roman" Width="235" Height="50" TextAlignment="Center" Background="#FFC3C3C3"
+               FontSize="22" Text="ID пользователя"/>
+        <TextBlock x:Name="userId" Margin="250,202,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="410"
+               FontFamily="Times New Roman" Background="#FFD2D2D2" MaxHeight="50" MinHeight="50" FontSize="22"
+               Padding="5,0,5,0"/>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="8612dd7c-ab70-4a18-b9ea-caf769e5aa63" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:62698/ServiceBook.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceBook.disco" MetadataType="Disco" ID="63cf80cc-7596-4475-b833-54e21b5b34a8" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?disco" />
+    <MetadataFile FileName="ServiceBook.xsd" MetadataType="Schema" ID="5aacb565-4776-4768-8eee-a31b41d80718" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?xsd=xsd3" />
+    <MetadataFile FileName="ServiceBook1.xsd" MetadataType="Schema" ID="378546f1-6368-4410-8844-31408cd53c76" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceBook2.xsd" MetadataType="Schema" ID="5dc87701-71ca-4dbe-af75-0c2ae52ccff2" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServiceBook3.xsd" MetadataType="Schema" ID="0ffeb219-0f85-4524-9e24-fc494175f100" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceBook.wsdl" MetadataType="Wsdl" ID="20d4269a-c0d4-4d59-80dd-d4405671b13d" SourceId="1" SourceUrl="http://localhost:62698/ServiceBook.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

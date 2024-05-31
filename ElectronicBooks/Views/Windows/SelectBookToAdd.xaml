@@ -1,0 +1,49 @@
+﻿<Window x:Class="ElectronicBooks.Views.Windows.SelectBookToAdd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicBooks.Views.Windows"
+        mc:Ignorable="d"
+        Title="Выберите книгу для добавления в облако"
+        Icon="/ElectronicBooks;component/Resources/Images/bookIcon.png"
+        ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Width="450" Height="440">
+    <FrameworkElement.Resources>
+        <Style x:Key="myLBStyle" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border Name="_Border" Padding="2" SnapsToDevicePixels="true">
+                            <ContentPresenter/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="true">
+                                <Setter TargetName="_Border" Property="Border.Background" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="ListBoxItem.IsSelected" Value="false">
+                                <Setter TargetName="_Border" Property="Border.Background" Value="#FFD4D4D4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </FrameworkElement.Resources>
+    <Grid>
+        <Panel.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF686868" Offset="0"/>
+                <GradientStop Color="#FFDFDFDF" Offset="1"/>
+            </LinearGradientBrush>
+        </Panel.Background>
+        <ListBox x:Name="list" Margin="10,10,10,10" HorizontalContentAlignment="Center"
+             ItemContainerStyle="{StaticResource myLBStyle}">
+            <Control.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Silver" Offset="0"/>
+                    <GradientStop Color="#FF656565" Offset="1"/>
+                </LinearGradientBrush>
+            </Control.Background>
+        </ListBox>
+    </Grid>
+</Window>
