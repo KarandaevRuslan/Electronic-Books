@@ -60,7 +60,8 @@ namespace ElectronicBooks.Views.Windows
                     {
                         ServiceBookClient client = AppSettings.GetClient();
                         client.Open();
-                        this.Dispatcher.Invoke((System.Action)(() => this.UserName.Text = "Пользователь: " + client.GetName(AppSettings.UserId)));
+                        String name = client.GetName(AppSettings.UserId);
+                        this.Dispatcher.Invoke((System.Action)(() => this.UserName.Text = "Пользователь: " + name));
                         client.Close();
                     }
                     catch (Exception ex)
